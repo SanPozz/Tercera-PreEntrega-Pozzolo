@@ -1,0 +1,24 @@
+{% extends "App_Coder/padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    {% if entregable_formulario_crear.errors %}
+
+    <p style="color: red;"> Están mal los datos, revisar</p>
+
+    {% endif %}
+    <form action="" method="POST">{% csrf_token %}
+
+        <!-- Acá está la magia de Django-->
+        
+        <table>
+            {{ entregable_formulario_crear.as_table }}
+        </table>
+
+        <input type="submit", value="Enviar">
+
+    </form>
+
+{% endblock contenido %}
