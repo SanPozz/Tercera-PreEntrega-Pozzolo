@@ -2,40 +2,30 @@
 
 {% load static %}
 
-{% block contenidoQueCambia %}
+{% block contenido %}
+<h3>Buscar Curso por Comision</h3>
 
+<form action="/App_Coder/buscar/" method="GET">
 
-    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
-    <h1>Este es el título del Inicio que cambio</h1>
-  
+    <input type="number" name="comision" id="comision">
 
-    <h3>Podes buscar una camada:</h3>
+    <input type="submit" value="Buscar">
 
-    <form action="/AppCoder/buscar/" method="GET">
-
-        <input type="number" name="camada" id="camada">
-
-        <input type="submit" value="Buscar">
+</form>
 
 
 
+{% if cursos %}
 
-    </form>
+<b><p>Buscando: {{comision}}</p></b>
 
-    
+<ul>
+{% for curso in cursos %}
+    <li> {{curso.nombre}}, {{curso.comision}} </li>
+{% endfor %}
 
-    {% if cursos %}
+</ul>
 
-    <p>Estamos buscando el: {{camada}}</p>
-
-    <ul>
-	{% for curso in cursos %}
-		<li> {{curso.nombre}} </li>
-		<li> {{curso.camada}} </li>
-	{% endfor %}
-
-    </ul>
-
-    {% endif %}
+{% endif %}
 
 {% endblock %}

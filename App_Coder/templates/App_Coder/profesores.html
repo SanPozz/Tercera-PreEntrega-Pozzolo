@@ -3,15 +3,10 @@
 {% load static %}
 
 {% block contenido %}
-    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
-    {% if profesor_formulario_crear.errors %}
 
-    <p style="color: red;"> Están mal los datos, revisar</p>
+    <h3> Agregar Profesor a la Base de Datos</h3>
 
-    {% endif %}
     <form action="" method="POST">{% csrf_token %}
-
-        <!-- Acá está la magia de Django-->
         
         <table>
             {{ profesor_formulario_crear.as_table }}
