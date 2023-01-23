@@ -12,7 +12,7 @@ Esta pre-entrega contiene:
 + Instala Django en el ambiente virtual con este comando:
 
 ```
-pip install -r requirements.txt
+pip install Django
 ```
 + Clona el proyecto
 + Entra en la carpeta que acabas de clonar
